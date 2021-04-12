@@ -6,6 +6,12 @@ This application is build using MongoDB and NodeJS.
 
 ## App Info
 
+To use, add a file default.json in the config directory with the following information
+{
+"mongoURI": "your mongo uri",
+"jwtSecret": "pick a secret"
+}
+
 ### Author
 
 The Foodies Network
