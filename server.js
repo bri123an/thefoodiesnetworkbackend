@@ -9,6 +9,9 @@ connectDB();
 
 // Init Middleware
 app.use(express.json());
+app.use(function(req, res, next) { res.header("Access-Control-Allow-Origin", "*"); 
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-auth-token"); next();
+});
 
 // Define Routes
 app.use('/api/users', require('./routes/api/users'));
