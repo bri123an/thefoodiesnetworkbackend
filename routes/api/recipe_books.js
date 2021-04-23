@@ -12,7 +12,7 @@ const checkObjectId = require('../../middleware/checkObjectId');
 // @access   Private
 router.post(
   '/',
-  auth,
+  auth, // auth middleware applied
   check('recipes', 'Recipes is required').not().isEmpty(),
   async (req, res) => {
     const errors = validationResult(req);
@@ -45,7 +45,6 @@ router.post(
 router.put(
     '/:id',
     auth,
-    check('ingredients', 'Ingredients is required').not().isEmpty(),
     async (req, res) => {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
